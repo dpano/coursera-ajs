@@ -42,6 +42,10 @@
             {
                 name: "Cup cakes",
                 quantity: 10
+            },
+            {
+                name: "Chips",
+                quantity: 30
             }
         ];
         var itemsAlreadyBought = [];
