@@ -41,6 +41,11 @@
         narrowItDown.search = function () {
             narrowItDown.items = [];
             var term = narrowItDown.searchTerm;
+            
+            if (!term){
+                return;
+            }
+
             var promise = MenuSearchService.getMatchedMenuItems(term);
             promise.then(function (response) {
                 narrowItDown.items = response;
@@ -66,10 +71,6 @@
             }).then(function (result) {
                 // process result and only keep items that match 
                 var foundItems = [];
-
-                if (typeof term === undefined || term === '') {
-                    return foundItems;
-                }
                 for (var i = 0; i < result.data.menu_items.length; i++) {
                     var name = result.data.menu_items[i].description;
 
