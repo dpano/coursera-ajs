@@ -66,18 +66,18 @@
             }).then(function (result) {
                 // process result and only keep items that match 
                 var foundItems = [];
-                
+
                 if (typeof term === undefined || term === '') {
                     return foundItems;
                 }
-                    for (var i = 0; i < result.data.menu_items.length; i++) {
-                        var name = result.data.menu_items[i].description;
+                for (var i = 0; i < result.data.menu_items.length; i++) {
+                    var name = result.data.menu_items[i].description;
 
-                        if (name.toLowerCase().indexOf(term) !== -1) {
-                            foundItems.push(result.data.menu_items[i]);
-                        }
+                    if (name.toLowerCase().indexOf(term) !== -1) {
+                        foundItems.push(result.data.menu_items[i]);
                     }
-                
+                }
+
                 // return processed items
                 return foundItems;
             });
