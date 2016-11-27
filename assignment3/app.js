@@ -12,6 +12,7 @@
             scope: {
                 items: '<',
                 myTitle: '@title',
+                show: '@show',
                 onRemove: '&'
             },
             controller: NarrowItDownDirectiveController,
@@ -24,11 +25,7 @@
 
 
     function NarrowItDownDirectiveController() {
-        var list = this;
 
-        list.isEmpty = function () {
-            return list.items.length === 0
-        }
     }
 
     NarrowItDownController.$inject = ['MenuSearchService'];
@@ -36,11 +33,13 @@
         var narrowItDown = this;
         narrowItDown.myTitle = 'Found Items';
         narrowItDown.items = [];
+        narrowItDown.showError = 0;
 
 
         narrowItDown.search = function () {
             narrowItDown.items = [];
             var term = narrowItDown.searchTerm;
+            narrowItDown.showError = 1;
             
             if (!term){
                 return;

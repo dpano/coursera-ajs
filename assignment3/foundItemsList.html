@@ -1,4 +1,5 @@
-<h3 ng-if="list.isEmpty() == false">{{ list.myTitle}} ({{list.items.length}})</h3>
+<h3 ng-if="list.items.length > 0">{{ list.myTitle}} ({{list.items.length}})</h3>
+{{list.show}}
 <table class="table table-striped"> 
     <thead> 
         <tr> 
@@ -21,12 +22,5 @@
 
     </tbody> 
 </table>
-<!--
-<ol>
-    <li ng-repeat="item in list.items">
-        {{ item.short_name}}, {{ item.name}},{{ item.description}}
-        <button ng-click="list.onRemove({index: $index});">Remove Item</button>
-    </li>
-</ol>-->
-<h4 ng-if="list.isEmpty()">No Items Found!</h4>
+<h4 ng-if="list.items.length == 0 && list.show == 1">No Items Found!</h4>
 
