@@ -1,0 +1,32 @@
+<h3 ng-if="list.isEmpty() == false">{{ list.myTitle}} ({{list.items.length}})</h3>
+<table class="table table-striped"> 
+    <thead> 
+        <tr> 
+            <th>#</th> 
+            <th>Short Name</th> 
+            <th>Name</th> 
+            <th>Description</th> 
+            <th>Actions</th> 
+        </tr> 
+    </thead> 
+    <tbody> 
+        <tr ng-repeat="item in list.items"> 
+            <th scope="row">{{$index + 1}}</th> 
+            <td>{{ item.short_name}}</td> 
+            <td>{{ item.name}}</td> 
+            <td>{{ item.description}}</td> 
+            <td><button ng-click="list.onRemove({index: $index});">Remove Item</button></td>
+        </tr> 
+        <tr> 
+            
+    </tbody> 
+</table>
+<!--
+<ol>
+    <li ng-repeat="item in list.items">
+        {{ item.short_name}}, {{ item.name}},{{ item.description}}
+        <button ng-click="list.onRemove({index: $index});">Remove Item</button>
+    </li>
+</ol>-->
+<h4 ng-if="list.isEmpty()">No Items Found!</h4>
+
