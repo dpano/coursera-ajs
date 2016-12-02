@@ -21,30 +21,15 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   // Premade list page
   .state('categories', {
-    url: '/categories-list',
-    templateUrl: 'src/menuapp/templates/categorieslist.template.html',
+    url: '/categories',
+    templateUrl: 'src/menuapp/templates/main-categories.template.html',
     controller: 'CategoriesListController as categoriesList',
     resolve: {
       items: ['MenuDataService', function (MenuDataService) {
-        return MenuDataService.getAllCategories();
+        return MenuDataService.getItems();
       }]
     }
-  })
-
-//  .state('itemDetail', {
-//    url: '/item-detail/{itemId}',
-//    templateUrl: 'src/shoppinglist/templates/item-detail.template.html',
-//    controller: 'ItemDetailController as itemDetail',
-//    resolve: {
-//      item: ['$stateParams', 'ShoppingListService',
-//            function ($stateParams, ShoppingListService) {
-//              return ShoppingListService.getItems()
-//                .then(function (items) {
-//                  return items[$stateParams.itemId];
-//                });
-//            }]
-//    }
-//  });
+  });
 }
 
 })();
