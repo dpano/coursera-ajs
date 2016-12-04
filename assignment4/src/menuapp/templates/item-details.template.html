@@ -1,3 +1,7 @@
-<h2>Name: {{$ctrl.item.name}}</h2>
-<p><b>Short Name</b>: {{$ctrl.item.short_name}}</p>
-<p><b>Special Instructions</b>: {{$ctrl.item.special_instructions}}</p>
+<h2>Name: {{$ctrl.item.category.name}}</h2>
+<p><b>Short Name</b>: {{$ctrl.item.category.short_name}}</p>
+<p><b>Special Instructions</b>: {{$ctrl.item.category.special_instructions}}</p>
+
+<ul>
+    <li ng-repeat="list in $ctrl.item.menu_items">{{list.name}} - {{list.description}}</li>
+</ul>

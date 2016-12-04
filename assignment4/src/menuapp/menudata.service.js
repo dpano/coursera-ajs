@@ -26,7 +26,8 @@ function MenuDataService($http) {
                 url: ('https://davids-restaurant.herokuapp.com/menu_items.json?category=' + shortName),
             }).then(function (result) {               
                 // return processed items
-                return result.data.category;
+                console.log(result);
+                return result.data;
             });
   }
 }
