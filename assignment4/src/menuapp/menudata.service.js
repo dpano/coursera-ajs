@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-angular.module('Data')
+angular.module('MenuApp')
 .service('MenuDataService', MenuDataService);
 
 
@@ -25,9 +25,8 @@ function MenuDataService($http) {
                 method: "GET",
                 url: ('https://davids-restaurant.herokuapp.com/menu_items.json?category=' + shortName),
             }).then(function (result) {               
-                console.log(result);
                 // return processed items
-                return result.data;
+                return result.data.category;
             });
   }
 }

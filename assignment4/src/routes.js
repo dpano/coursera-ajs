@@ -34,10 +34,11 @@
             .state('itemDetails', {
                 url: '/item-details/{shortName}',
                 templateUrl: 'src/menuapp/templates/main-item-details.template.html',
-                controller: 'CategoriesListController as categoriesList',
+                controller: 'ItemDetailsController as itemDetails',
                 resolve: {
-                    items: ['$stateParams','MenuDataService', function ($stateParams, MenuDataService) {
-                            return MenuDataService.getItemDetails($stateParams.shortName);
+                    item: ['$stateParams','MenuDataService', function ($stateParams, MenuDataService) {
+                            var mydata = MenuDataService.getItemDetails($stateParams.shortName);
+                            return mydata;
                         }]
                 }
             });
