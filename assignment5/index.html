@@ -50,8 +50,8 @@
                 <a ui-sref="public.menu">
                   <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
               </li>
-              <li>
-                <a href="#">
+              <li ui-sref-active="active">
+                <a ui-sref="public.myinfo">
                   <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
               </li>
               <li ui-sref-active="active">
@@ -124,6 +124,7 @@
     <script src="src/common/loading/loading.component.js"></script>
     <script src="src/common/loading/loading.interceptor.js"></script>
     <script src="src/common/menu.service.js"></script>
+    <script src="src/common/user.service.js" type="text/javascript"></script>
 
     <!-- Public Module -->
     <script src="src/public/public.module.js"></script>
@@ -134,6 +135,7 @@
     <script src="src/public/menu-item/menu-item.component.js"></script>
     <script src="src/public/sign-up/sign-up.controller.js" type="text/javascript"></script>
     <script src="src/public/sign-up/short-name-validator.directive.js" type="text/javascript"></script>
+    <script src="src/public/my-info/my-info.controller.js" type="text/javascript"></script>
 
     <!-- ADMIN SITE -->
 

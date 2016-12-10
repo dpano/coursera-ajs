@@ -4,24 +4,18 @@
     angular.module('public')
             .controller('SignupController', SignupController);
 
-    SignupController.$inject = ['$http', 'ApiPath'];
-    function SignupController($http, ApiPath) {
+    SignupController.$inject = ['$http', 'ApiPath','userService'];
+    function SignupController($http, ApiPath, userService) {
         var signupCtrl = this;   
         signupCtrl.user =  {} ;
-        signupCtrl.user.favorite = false;
+        signupCtrl.saved = false;
+        signupCtrl.showForm = userService.getMyInfo();
         signupCtrl.signup = function(){
-            console.log("sdf: " + signupCtrl.user.fname);
-        }
-        
-        signupCtrl.checkFavorite = function(){
-            return $http.get(ApiPath + '/menu_items/' + signupCtrl.user.shortName + '.json').then(function (response) {
-                return true;
-              }, function (error){
-                  return false;
-              });
-             
+            signupCtrl.saved = userService.signup(signupCtrl.user);
             
         }
+        
+        
     }
 })();
 

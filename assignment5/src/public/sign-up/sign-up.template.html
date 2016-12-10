@@ -1,5 +1,5 @@
-<div class="container" novalidate>
-  <form class="form-horizontal" name="signupForm">
+<div class="container" >
+  <form class="form-horizontal" name="signupForm" novalidate ng-if="!signupCtrl.showForm.fname">
     <div class="form-group">
       <label class="col-sm-2 control-label">First Name</label>
       <div class="col-sm-6">
@@ -79,7 +79,7 @@
         <span id="helpBlock2" 
               class="help-block"
               placeholder="Phone number ###-###-####"
-              ng-if="signupForm.shortName.$invalid && signupForm.shortName.$touched">not valid</span>
+              ng-if="signupForm.shortName.$invalid && signupForm.shortName.$touched">No such menu number exists</span>
         
       </div>
     </div>
@@ -90,7 +90,11 @@
                 class="btn btn-default"
                 ng-disabled="signupForm.$invalid || signupForm.$pending "
                 ng-click="signupCtrl.signup()">Sign up</button>
+        <span ng-if="signupCtrl.saved">User saved successfully</span>
       </div>
+      
+      
     </div>
   </form> 
+  <div class="alert alert-warning text-center" ng-if="signupCtrl.showForm.fname">You have already signed up!</div>
 </div>
