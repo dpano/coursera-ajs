@@ -15,7 +15,7 @@
 
         service.getMyInfo = function () {           
             if (angular.isUndefined(service.myInfo) || service.myInfo === null) {
-                return service.myInfo;
+                return {};
             } else {
                 return service.myInfo;
             }           
