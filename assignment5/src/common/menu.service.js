@@ -29,7 +29,7 @@
 
         service.validateMenuItem = function (shortName) {
             return $http.get(ApiPath + '/menu_items/' + shortName + '.json').then(function (response) {
-                return true;
+                return response.data;
             }, function (error) {
                 return false;
             });

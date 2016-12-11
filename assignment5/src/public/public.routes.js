@@ -55,6 +55,9 @@ function routeConfig ($stateProvider) {
       resolve: {
         myinfo: ['userService', function (userService) {
           return userService.getMyInfo();
+        }],
+        mymenu: ['userService', function (userService){
+                return userService.getSelectedMenu();
         }]
       }
     });

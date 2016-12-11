@@ -8,7 +8,6 @@
     function UserService($http, $q) {
         var service = this;
         
-        
         service.signup = function (myInfo) {           
             service.myInfo = myInfo;
             return true;
@@ -22,6 +21,13 @@
             }           
 
         };
+        
+        service.setSelectedMenu = function (selectedMenu) {           
+            service.myMenu = selectedMenu;
+        }
+        service.getSelectedMenu = function () {           
+            return service.myMenu;
+        }
     }
 })();
 
