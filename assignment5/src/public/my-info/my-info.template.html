@@ -1,25 +1,25 @@
 <div class="container">
-  <div ng-if="!myInfoCtrl.myinfo.fname" class="alert alert-danger text-center">
+  <div ng-if="!myInfoCtrl.myinfo.personalData.fname" class="alert alert-danger text-center">
     Not Signed Up Yet. <a ui-sref="public.signup" class="alert-link">Sign up Now!</a>
   </div>
-  <div ng-if="myInfoCtrl.myinfo.fname">
+  <div ng-if="myInfoCtrl.myinfo.personalData.fname">
     <div class="page-header">
       <h1>User information</h1>
     </div>
-    <p>First name:    {{myInfoCtrl.myinfo.fname}}</p>
-    <p>Last  name:    {{myInfoCtrl.myinfo.lname}}</p>
-    <p>Email Address: {{myInfoCtrl.myinfo.email}}</p>
-    <p>Phone Number:  {{myInfoCtrl.myinfo.phone}}</p>
+    <p>First name:    {{myInfoCtrl.myinfo.personalData.fname}}</p>
+    <p>Last  name:    {{myInfoCtrl.myinfo.personalData.lname}}</p>
+    <p>Email Address: {{myInfoCtrl.myinfo.personalData.email}}</p>
+    <p>Phone Number:  {{myInfoCtrl.myinfo.personalData.phone}}</p>
 
     <h2>Favorite dish</h2>
     <div class="media">
       <div class="media-left">
-        <img class="media-object" ng-src="{{myInfoCtrl.apipath}}/images/{{myInfoCtrl.myinfo.shortName}}.jpg" alt="{{myInfoCtrl.myinfo.shortName}}">
+        <img class="media-object" ng-src="{{myInfoCtrl.apipath}}/images/{{myInfoCtrl.myinfo.personalData.shortName}}.jpg" alt="{{myInfoCtrl.myinfo.personalData.shortName}}">
       </div>
     </div>
     <div class="media-body">
-      <h4 class="media-heading">{{myInfoCtrl.mymenu.short_name}} - {{myInfoCtrl.mymenu.name}}</h4>
-      {{myInfoCtrl.mymenu.description}}
+      <h4 class="media-heading">{{myInfoCtrl.myinfo.menu.short_name}} - {{myInfoCtrl.myinfo.menu.name}}</h4>
+      {{myInfoCtrl.myinfo.menu.description}}
     </div>
   </div>
 

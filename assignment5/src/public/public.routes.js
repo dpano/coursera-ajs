@@ -54,10 +54,11 @@ function routeConfig ($stateProvider) {
       controllerAs: 'myInfoCtrl',
       resolve: {
         myinfo: ['userService', function (userService) {
-          return userService.getMyInfo();
-        }],
-        mymenu: ['userService', function (userService){
-                return userService.getSelectedMenu();
+                var myinfo = {
+                    personalData : userService.getMyInfo(),
+                    menu : userService.getSelectedMenu()
+                }
+          return myinfo;
         }]
       }
     });
